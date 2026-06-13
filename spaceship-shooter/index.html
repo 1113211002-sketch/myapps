@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>太空船射擊遊戲</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <a href="../index.html" class="back-home">⬅ 返回應用總覽</a>
+
+    <div class="game-container">
+        <div class="top-bar">
+            <div class="score-board">分數: <span id="score">0</span></div>
+            <div class="lives-board">生命: <span id="lives">❤️❤️❤️</span></div>
+        </div>
+        
+        <canvas id="gameCanvas" width="400" height="500"></canvas>
+
+        <div id="start-screen" class="game-overlay">
+            <h2>🚀 太空防衛戰 🚀</h2>
+            <div class="instructions">
+                <p><strong>【核心任務】</strong></p>
+                <p>消滅迎面而來的隕石，守護太空基地！</p>
+                <br>
+                <p><strong>【操作說明】</strong></p>
+                <p>⬅ ➡ 方向鍵 或 A / D 鍵：<strong>左右移動</strong></p>
+                <p>空白鍵 (Space)：<strong>發射雷射子彈</strong></p>
+                <br>
+                <p><strong>【遊戲規則】</strong></p>
+                <p>您總共有 <span style="color: #fc8181;">3 條生命</span>。每被隕石撞擊一次扣除 1 命。生命歸零則遊戲結束！</p>
+            </div>
+            <button id="start-btn">開始遊戲</button>
+        </div>
+
+        <div id="game-over-screen" class="game-overlay hidden">
+            <h2>💥 戰機被毀 💥</h2>
+            <p>最終得分: <span id="final-score">0</span></p>
+            <button id="restart-btn">重新開始</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,159 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 返回首頁按鈕 */
+.back-home {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 8px 16px;
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    transition: background 0.3s;
+    z-index: 100;
+}
+
+.back-home:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+/* 遊戲外殼容器 */
+.game-container {
+    position: relative;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+/* 🏆 頂部資訊列（橫向排列） 🏆 */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+/* Canvas 遊戲視窗 */
+#gameCanvas {
+    background: #0f172a;
+    border-radius: 12px;
+    display: block;
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.6);
+}
+
+/* 遊戲結束覆蓋畫面 */
+.game-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 23, 42, 0.85);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.game-overlay h2 {
+    font-size: 32px;
+    color: #f56565;
+    margin-bottom: 10px;
+}
+
+.game-overlay p {
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+
+#restart-btn {
+    background: #48bb78;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+}
+
+#restart-btn:hover {
+    background: #38a169;
+    transform: scale(1.05);
+}
+
+.hidden {
+    display: none !important;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* ...前面的 CSS 保持不變，直接在檔案最下方加上這段即可... */
+
+/* 🏆 新增：遊玩說明文字排版 🏆 */
+.instructions {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px 20px;
+    border-radius: 10px;
+    max-width: 320px;
+    text-align: left;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.instructions strong {
+    color: #fde047; /* 黃色重點字 */
+}
+
+/* 讓開始按鈕跟重新開始按鈕有一樣漂亮的視覺 */
+#start-btn {
+    background: #3182ce;
+    color: white;
+    border: none;
+    padding: 12px 40px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+    box-shadow: 0 4px 12px rgba(49, 130, 206, 0.4);
+}
+
+#start-btn:hover {
+    background: #2b6cb0;
+    transform: scale(1.05);
+}
