@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    /* 🏆 核心修正：替換為與天氣預報一樣的紫色漸層背景 🏆 */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 20px;
+}
+
+/* 返回首頁按鈕 */
+.back-home {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    /* 🏆 核心修正：將文字顏色設為白色，在深色背景上更清晰 🏆 */
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    /* 🏆 核心修正：使用與天氣預報一樣的半透明白色背景 🏆 */
+    background: rgba(255, 255, 255, 0.2);
+    padding: 8px 16px;
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    transition: background 0.3s;
+    z-index: 100;
+}
+
+.back-home:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+/* 日曆主卡片 (沿用原本的白色毛玻璃質感) */
+.calendar-container {
+    /* 🏆 核心修正：使用與天氣預報一樣的毛玻璃質感卡片 🏆 */
+    background: rgba(255, 255, 255, 0.85);
+    width: 100%;
+    max-width: 450px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 25px;
+}
+
+/* 頂部控制列 */
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.calendar-header h2 {
+    font-size: 24px;
+    color: #2d3748;
+}
+
+.calendar-header button {
+    /* 🏆 核心修正：讓按鈕背景稍微透明 🏆 */
+    background: rgba(237, 242, 247, 0.6);
+    border: none;
+    color: #4a5568;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calendar-header button:hover {
+    background: #5c7cfa;
+    color: white;
+}
+
+/* 核心 Grid 設定 */
+.weekdays, .days {
+    display: grid !important;
+    grid-template-columns: repeat(7, 1fr) !important;
+    text-align: center;
+}
+
+/* 星期欄位 */
+.weekdays {
+    font-weight: bold;
+    color: #718096;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 10px;
+}
+
+/* 日期網格樣式 */
+.days div {
+    aspect-ratio: 1 / 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #4a5568;
+    font-size: 17px;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: background 0.2s, color 0.2s;
+}
+
+/* 懸停效果 */
+.days div:not(.empty):hover {
+    background: #edf2f7;
+    color: #5c7cfa;
+}
+
+/* 今天的日期高亮顯示 */
+.days div.today {
+    background: #5c7cfa;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(92, 124, 250, 0.4);
+}
+
+/* 空白格樣式 */
+.days div.empty {
+    cursor: default;
+}
