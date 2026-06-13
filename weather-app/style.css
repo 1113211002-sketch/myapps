@@ -1,0 +1,168 @@
+/* 基本重設 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    position: relative;
+}
+
+/* 返回首頁按鈕 */
+.back-home {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 8px 16px;
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    transition: background 0.3s;
+}
+
+.back-home:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+/* 天氣主卡片 */
+.weather-container {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 30px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #4a5568;
+}
+
+/* 下拉選單與按鈕佈局 */
+.search-box {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+#city-select {
+    flex: 1;
+    padding: 12px 15px;
+    border: 1px solid #cbd5e0;
+    border-radius: 10px;
+    outline: none;
+    font-size: 16px;
+    background-color: white;
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+
+#city-select:focus {
+    border-color: #667eea;
+}
+
+#search-btn {
+    background: #667eea;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+#search-btn:hover {
+    background: #5a67d8;
+}
+
+/* 天氣資訊內容 */
+.weather-info {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+#city-name {
+    font-size: 24px;
+    color: #2d3748;
+    margin-bottom: 10px;
+}
+
+.weather-status {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+#weather-icon {
+    width: 60px;
+    height: 60px;
+}
+
+#weather-desc {
+    font-size: 18px;
+    color: #4a5568;
+}
+
+.temp-display {
+    font-size: 48px;
+    font-weight: bold;
+    color: #1a202c;
+    margin-bottom: 20px;
+}
+
+/* 詳細資料欄位 */
+.details {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.col {
+    flex: 1;
+}
+
+.col p:first-child {
+    font-size: 14px;
+    color: #718096;
+    margin-bottom: 5px;
+}
+
+.col p:last-child {
+    font-size: 18px;
+    font-weight: 600;
+    color: #2d3748;
+}
+
+/* 工具類別：隱藏與動畫 */
+.hidden {
+    display: none !important;
+}
+
+.error-msg {
+    color: #e53e3e;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
