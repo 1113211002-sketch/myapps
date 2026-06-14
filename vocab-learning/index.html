@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>核心單字卡學習系統</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <a href="../index.html" class="back-home">⬅ 返回應用總覽</a>
+
+    <div class="vocab-container">
+        <div class="progress-section">
+            <div class="progress-text">學習進度: <span id="current-index">1</span> / <span id="total-count">0</span></div>
+            <div class="progress-bar-bg">
+                <div id="progress-bar-fill"></div>
+            </div>
+        </div>
+
+        <div class="card-wrapper">
+            <div id="vocab-card" class="vocab-card">
+                <div class="card-face card-front">
+                    <button id="pronounce-btn" class="audio-btn">🔊</button>
+                    <h1 id="word-text">Word</h1>
+                    <p class="hint-text">點擊卡片翻面看解說</p>
+                </div>
+                <div class="card-face card-back">
+                    <h2 id="translation-text">中文翻譯</h2>
+                    <div class="example-box">
+                        <p><strong>例句：</strong></p>
+                        <p id="example-en">English example sentence.</p>
+                        <p id="example-zh" class="example-zh">中文例句翻譯。</p>
+                    </div>
+                    <p class="hint-text">點擊卡片可翻回正面</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="control-actions">
+            <button id="forgot-btn" class="action-btn forgot">❌ 還不熟</button>
+            <button id="mastered-btn" class="action-btn mastered"> Government IDs ✅ 已記住</button>
+        </div>
+
+        <div id="result-overlay" class="result-screen hidden">
+            <h2>🎉 學習完成！ 🎉</h2>
+            <p>本次統計結果：</p>
+            <div class="summary-box">
+                <p>✅ 輕輕鬆鬆記住：<span id="mastered-score" class="count-bold text-green">0</span> 個</p>
+                <p>❌ 還需要再努力：<span id="forgot-score" class="count-bold text-red">0</span> 個</p>
+            </div>
+            <button id="restart-btn">重新複習</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
