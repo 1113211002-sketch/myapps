@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>吃豆人 輕量版</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <a href="../index.html" class="back-home">⬅ 返回應用總覽</a>
+
+    <div class="game-container">
+        <div class="top-bar">
+            <div class="score-board">分數: <span id="score">0</span></div>
+            <div class="title-board">PACMAN</div>
+        </div>
+        
+        <canvas id="gameCanvas" width="400" height="400"></canvas>
+
+        <div id="start-screen" class="game-overlay">
+            <h2>💛 吃豆人 Lite 💛</h2>
+            <div class="instructions">
+                <p><strong>【操作說明】</strong></p>
+                <p>⌨️ 使用鍵盤 <strong>上下左右方向鍵</strong> 控制吃豆人移動。</p>
+                <br>
+                <p><strong>【遊戲規則】</strong></p>
+                <p>把迷宮裡所有的黃色小豆子吃光！</p>
+                <p>小心那隻紅色鬼魂 👻，被它抓到就輸了！</p>
+            </div>
+            <button id="start-btn">開始遊戲</button>
+        </div>
+
+        <div id="game-over-screen" class="game-overlay hidden">
+            <h2 id="end-title">💥 遊戲結束 💥</h2>
+            <p>最終得分: <span id="final-score">0</span></p>
+            <button id="restart-btn">再玩一次</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
