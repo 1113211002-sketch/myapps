@@ -1,0 +1,220 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 20px;
+}
+
+/* 返回首頁按鈕 */
+.back-home {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 8px 16px;
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    transition: background 0.3s;
+    z-index: 100;
+}
+
+.back-home:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+/* 測驗主容器卡片 */
+.quiz-container {
+    position: relative;
+    background: rgba(255, 255, 255, 0.88);
+    width: 100%;
+    max-width: 480px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+}
+
+/* 頂部資訊列 */
+.quiz-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 15px;
+    color: #4a5568;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* 進度條 */
+.progress-bar-bg {
+    width: 100%;
+    height: 6px;
+    background: #e2e8f0;
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 25px;
+}
+
+#progress-bar-fill {
+    width: 0%;
+    height: 100%;
+    background: #764ba2;
+    transition: width 0.3s ease;
+}
+
+/* 題目文字區 */
+.question-section {
+    margin-bottom: 25px;
+}
+
+#question-text {
+    font-size: 20px;
+    color: #1a202c;
+    line-height: 1.5;
+}
+
+/* 選項網格 */
+.options-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+/* 選項按鈕通用樣式 */
+.option-btn {
+    background: #ffffff;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 14px 20px;
+    font-size: 16px;
+    text-align: left;
+    color: #4a5568;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: 500;
+}
+
+/* 懸停效果 (僅在未點擊答題前有效) */
+.option-btn:hover:not([disabled]) {
+    background: #f7fafc;
+    border-color: #667eea;
+    color: #667eea;
+    transform: translateY(-1px);
+}
+
+/* 🏆 核心樣式：答對與答錯的反饋 🏆 */
+.option-btn.correct {
+    background: #dcfce7 !important;
+    border-color: #22c55e !important;
+    color: #15803d !important;
+}
+
+.option-btn.wrong {
+    background: #fee2e2 !important;
+    border-color: #ef4444 !important;
+    color: #b91c1c !important;
+}
+
+/* 下一題按鈕 */
+.next-btn {
+    width: 100%;
+    background: #764ba2;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.next-btn:hover {
+    background: #5a3285;
+}
+
+/* 結算覆蓋畫面 */
+.result-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    z-index: 10;
+    text-align: center;
+}
+
+#result-title {
+    font-size: 28px;
+    color: #2d3748;
+    margin-bottom: 20px;
+}
+
+.result-score-box {
+    background: #f7fafc;
+    border: 2px solid #e2e8f0;
+    padding: 20px 50px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+.result-score-box p {
+    font-size: 14px;
+    color: #718096;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#final-score {
+    font-size: 54px;
+    color: #764ba2;
+    margin-top: 5px;
+}
+
+#result-evaluation {
+    font-size: 16px;
+    color: #4a5568;
+    font-weight: bold;
+    margin-bottom: 35px;
+}
+
+#restart-btn {
+    background: #667eea;
+    color: white;
+    border: none;
+    padding: 12px 40px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+#restart-btn:hover {
+    background: #5a6fd6;
+}
+
+.hidden {
+    display: none !important;
+}

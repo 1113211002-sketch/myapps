@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>精選歷史知識挑戰賽</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <a href="../index.html" class="back-home">⬅ 返回應用總覽</a>
+
+    <div class="quiz-container">
+        <div class="quiz-header">
+            <div class="progress-text">問題: <span id="current-question">1</span> / <span id="total-questions">0</span></div>
+            <div class="score-text">得分: <span id="score">0</span></div>
+        </div>
+
+        <div class="progress-bar-bg">
+            <div id="progress-bar-fill"></div>
+        </div>
+
+        <div class="question-section">
+            <h2 id="question-text">載入題目中...</h2>
+        </div>
+
+        <div id="options-container" class="options-grid">
+            </div>
+
+        <button id="next-btn" class="next-btn hidden">下一題 ➔</button>
+
+        <div id="result-screen" class="result-overlay hidden">
+            <h2 id="result-title">💥 挑戰結束 💥</h2>
+            <div class="result-score-box">
+                <p>你的最終得分</p>
+                <h1 id="final-score">0</h1>
+            </div>
+            <p id="result-evaluation">評語載入中...</p>
+            <button id="restart-btn">重新挑戰</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
